@@ -2,7 +2,7 @@ const searchButton = document.getElementById('searchButton');
 const wordInput = document.getElementById('wordInput');
 const resultDiv = document.getElementById('result');
 
-// Função para buscar informações da palavra
+//Vai buscar o valor da palavra
 const fetchWordData = async (word) => {
   try {
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
@@ -17,7 +17,7 @@ const fetchWordData = async (word) => {
   }
 };
 
-// Função para exibir informações da palavra
+// Exibe o valor
 const displayWordData = (data) => {
   const { word, phonetics, meanings } = data;
 
@@ -45,13 +45,13 @@ const displayWordData = (data) => {
   `;
 };
 
-// Função para tocar o áudio da pronúncia
+// áudio
 const playAudio = (url) => {
   const audio = new Audio(url);
   audio.play();
 };
 
-// Evento de clique no botão de busca
+
 searchButton.addEventListener('click', () => {
   const word = wordInput.value.trim();
   if (word) {
